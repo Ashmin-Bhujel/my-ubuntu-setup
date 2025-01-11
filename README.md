@@ -234,7 +234,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
   > Setup the config for neovim at ~/.config/nvim
   >
-  > `Enable neotree, webdevicons, tabstop = 2, shiftwidth = 2, lsp`
+  > `Enable neotree, webdevicons, tabstop = 2, shiftwidth = 2, lsp (clangd, html_ls, css_ls, ts_ls, pyright)`
 
 - NodeJS
 

@@ -1,0 +1,8 @@
+font-size = 16
+theme = GitHub Dark
+gtk-titlebar = false
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+window-width = 130
+window-height = 30
