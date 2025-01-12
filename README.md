@@ -54,6 +54,18 @@ curl -LO "$GHOSTTY_DEB_URL"
 
 > Setup the config for ghostty at ~/.config/ghostty/config
 
+> Set precedence of ghostty terminal higher
+
+```sh
+gsettings set org.gnome.desktop.default-applications.terminal exec '/usr/bin/ghostty'
+```
+
+> See the precedence of terminal apps
+
+```sh
+sudo update-alternatives --config x-terminal-emulator
+```
+
 ## Enable Ubuntu Pro
 
 ```sh
@@ -231,7 +243,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
   ```sh
   # Install Tmux
   sudo nala install tmux
-  git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   ```
 
   > Setup the config for tmux at ~/.config/tmux/tmux.config
@@ -249,8 +261,8 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
   > Start Neovim
 
   > Setup the config for neovim at ~/.config/nvim
-  >
-  > `Enable neotree, webdevicons, tabstop = 2, shiftwidth = 2, lsp (clangd, html_ls, css_ls, ts_ls, pyright)`
+
+  > `Enable neotree, webdevicons, tabstop = 2, shiftwidth = 2, lsp`
 
 - NodeJS
 
