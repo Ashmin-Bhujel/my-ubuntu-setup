@@ -175,6 +175,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
      - VisBug
      - Wappalyzer
      - WhatFont
+     - Material Icons for GitHub
 
 2. For Zen browser (Optional)
 
@@ -285,6 +286,13 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
   # Install PNPM
   curl -fsSL https://get.pnpm.io/install.sh | sh -
   ```
+
+- Python
+  
+  ```sh
+  sudo nala install python3-full python3-pip python3-venv
+  ```
+
 
 - Docker
 
