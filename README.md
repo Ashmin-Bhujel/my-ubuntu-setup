@@ -1,4 +1,4 @@
-# 🖳 My Ubuntu Setup
+# 💻 My Ubuntu Setup
 
 ## Install Ubuntu
 
@@ -127,7 +127,8 @@ sudo pro attach [token]
    - Blur my Shell - [ aunetx ]
      - Default pipeline - NGB { R: 0, B: 1 }
      - Overview pipeline - NGB { R: 40, B: 0.2 }
-     - Panel - Static, Default, Disable in overview
+     - Transparent pipeline - No Effects
+     - Panel - Static, Transparent, Disable in overview
      - Overview - Overview, Transparent, Sigma: 100, B: 0.6, Folder: Transparent
      - Dash - Off
      - Application - Off
@@ -143,63 +144,28 @@ sudo pro attach [token]
      - Behaviour - { CA: Focus, minimize or show preview, SA: Cycle through windows }
      - Appearance - { Indicator: Dots (Dominant color), Dynamic: 0 to 100 }
 
-## Setup Flatpak (Optional)
+## Install Web Browser
 
-```sh
-# Setup Flatpak
-sudo add-apt-repository ppa:flatpak/stable
-sudo nala update
-sudo nala install flatpak
-sudo nala install gnome-software-plugin-flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-```
+- Brave browser
 
-## Install Web Browsers
+  ```sh
+  # Install Brave browser
+  curl -fsS https://dl.brave.com/install.sh | sh
+  ```
 
-1. For Brave browser
-
-   ```sh
-   # Install Brave browser
-   curl -fsS https://dl.brave.com/install.sh | sh
-   ```
-
-   - Setup Brave browser
-   - Import Bookmarks
-   - Extensions
-     - Color Picker - Eyedropper Tool
-     - CSS Peeper
-     - Dark Reader
-     - GoFullPage - Full Page Screen Capture
-     - JSON Formatter
-     - React Developer Tools
-     - VisBug
-     - Wappalyzer
-     - WhatFont
-     - Material Icons for GitHub
-
-2. For Zen browser (Optional)
-
-   > NOTE: Flatpak is needed to download Zen browser
-
-   ```sh
-   # Install Zen browser
-   flatpak install flathub io.github.zen_browser.zen
-   ```
-
-   - Setup Zen browser
-   - Import Bookmarks
-   - Extensions
-
-     - JSON Formatter
-     - Disable default by about:config
-     - Dark Reader
-     - React Developer Tools
-     - VisBug
-     - Wappalyzer
-     - WhatFont
-     - uBlock Origin
-
-   - Sign in to Mozilla Firefox Account (Optional)
+  - Setup Brave browser
+  - Import Bookmarks
+  - Extensions
+    - Color Picker - Eyedropper Tool
+    - CSS Peeper
+    - Dark Reader
+    - GoFullPage - Full Page Screen Capture
+    - JSON Formatter
+    - React Developer Tools
+    - VisBug
+    - Wappalyzer
+    - WhatFont
+    - Material Icons for GitHub
 
 ## Login to Gnome with Google account
 
@@ -228,14 +194,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 - VS Code
 
-  > NOTE: This command downloads the specified version of VS Code, can also download .deb file later
-
-  ```sh
-  # Download VS Code
-  wget https://vscode.download.prss.microsoft.com/dbazure/download/stable/fabdb6a30b49f79a7aba0f2ad9df9b399473380f/code_1.96.2-1734607745_amd64.deb
-  ```
-
-  > Install the .deb setup file
+  > Download and install the .deb setup file
 
   > Login to GitHub account and setup VS Code
 
@@ -288,11 +247,10 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
   ```
 
 - Python
-  
+
   ```sh
   sudo nala install python3-full python3-pip python3-venv
   ```
-
 
 - Docker
 
