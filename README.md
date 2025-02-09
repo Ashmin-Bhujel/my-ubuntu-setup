@@ -24,6 +24,14 @@ sudo snap refresh snap-store
 
 > Uninstall snap version of Firefox browser
 
+## Install timeshift for recovery and backup
+
+```sh
+sudo nala install timeshift
+```
+
+> Make a snapshot of the system
+
 ## Install necessary packages
 
 ```sh
