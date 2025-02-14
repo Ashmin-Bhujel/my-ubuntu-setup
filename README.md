@@ -12,7 +12,8 @@
 # Update packages
 sudo apt update
 sudo apt upgrade
-sudo apt install nala
+sudo apt install nala git -y
+sudo nala full-upgrade
 ```
 
 ## Update Snap Store
@@ -24,19 +25,11 @@ sudo snap refresh snap-store
 
 > Uninstall snap version of Firefox browser
 
-## Install timeshift for recovery and backup
-
-```sh
-sudo nala install timeshift
-```
-
-> Make a snapshot of the system
-
 ## Install necessary packages
 
 ```sh
 # Install essential packages
-sudo nala install curl wget git git-flow build-essential net-tools gnome-tweaks gnome-shell-extension-manager btop gdb ubuntu-restricted-extras vlc libgtop2-dev
+sudo nala install curl wget git git-flow build-essential net-tools gnome-tweaks gnome-shell-extension-manager btop gdb ubuntu-restricted-extras vlc libgtop2-dev -y
 ```
 
 ### Install Fastfetch
@@ -62,24 +55,10 @@ curl -LO "$GHOSTTY_DEB_URL"
 
 > Setup the config for ghostty at ~/.config/ghostty/config
 
-> Set precedence of ghostty terminal higher
-
-```sh
-gsettings set org.gnome.desktop.default-applications.terminal exec '/usr/bin/ghostty'
-```
-
 > See the precedence of terminal apps
 
 ```sh
 sudo update-alternatives --config x-terminal-emulator
-```
-
-## Enable Ubuntu Pro
-
-```sh
-# Enable Ubuntu Pro
-# There will be token something like this e.g. HwtRJPaT6huyLd2CUzcJ1u4XuC13BX
-sudo pro attach [token]
 ```
 
 ## Setup Zsh and Oh My Zsh
@@ -125,7 +104,7 @@ sudo pro attach [token]
 
 > NOTE: My personal configurations
 
-1. Tweak system settings
+1. Tweak system settings and configure I/O sound using `alsamixer`
 
 2. Install fonts such as JetBrainsMono Nerd Font and Nepali fonts
 
@@ -143,7 +122,8 @@ sudo pro attach [token]
      - Other - LSB(Overview pipeline), SCB (Overview pipeline), Alt-Tab (Default pipeline)
    - Clipboard Indicator - [ Tudmotu ]
    - Logo Menu - [ Aryan Kausik ]
-   - Extension Manager - Software Center: snap-store
+     - Extension Manager
+     - Software Center: snap-store
    - Places Status Indicator - [ fmuellner ]
    - [QSTweak] Quick Setting Tweaker - [ qwreey ] - Mostly options on except JS Regex
    - System Monitor - [ fmuellner ]
@@ -211,7 +191,7 @@ sudo pro attach [token]
   ```sh
   # Install Tmux
   sudo nala install tmux
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
   ```
 
   > Setup the config for tmux at ~/.config/tmux/tmux.config
@@ -230,7 +210,7 @@ sudo pro attach [token]
 
   > Setup the config for neovim at ~/.config/nvim
 
-  > `Enable neotree, webdevicons, tabstop = 2, shiftwidth = 2, lsp`
+  > `Enable neo-tree, nerdfont, tabstop = 2, shiftwidth = 2, lsp`
 
 - NodeJS
 
@@ -240,14 +220,14 @@ sudo pro attach [token]
   nvm install --lts
   ```
 
-- DenoJS
+- DenoJS (Oprional)
 
   ```sh
   # Install DenoJS
   curl -fsSL https://deno.land/install.sh | sh
   ```
 
-- PNPM
+- PNPM (Oprional)
 
   ```sh
   # Install PNPM
@@ -260,7 +240,7 @@ sudo pro attach [token]
   sudo nala install python3-full python3-pip python3-venv
   ```
 
-- Docker
+- Docker (Oprional)
 
   ```sh
   # Add Docker's official GPG key
