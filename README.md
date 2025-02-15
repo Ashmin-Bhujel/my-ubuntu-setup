@@ -180,6 +180,34 @@ sudo update-alternatives --config x-terminal-emulator
 
 ## Install development tools
 
+- Setup Git and GitHub
+
+  - Git config
+
+    ```bash
+    git config --global user.name "Your Name"
+    ```
+
+    ```bash
+    git config --global user.email "Your Email"
+    ```
+
+    ```bash
+    git config --global init.defaultBranch "main"
+    ```
+
+  - Setup SSH key
+
+    ```bash
+    ssh-keygen
+    ```
+
+    > Copy the public key from `.ssh/` directory
+
+    > Go to GitHub > Settings > SSH and GPG Keys then add the generated SSH key
+
+    > Check the connection by `ssh -T git@github`
+
 - VS Code
 
   > Download and install the .deb setup file
