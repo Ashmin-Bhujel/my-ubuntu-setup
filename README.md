@@ -91,7 +91,7 @@ sudo update-alternatives --config x-terminal-emulator
 
 4. Install Powerlevel10k theme for OhMyZsh
 
-   > Install Nerd Font for symbols e.g. JetBrainsMono Nerd Font
+   > Install Nerd Font for symbols either JetBrainsMono Nerd Font or Liga SFMono Nerd Font (Current)
 
    ```sh
    # Install powerlevel10k theme
@@ -134,7 +134,7 @@ sudo update-alternatives --config x-terminal-emulator
 
 ## Install Web Browser
 
-- Brave browser
+- Brave browser (Chromium based)
 
   ```sh
   # Install Brave browser
@@ -145,14 +145,51 @@ sudo update-alternatives --config x-terminal-emulator
   - Import Bookmarks
   - Extensions
     - Color Picker - Eyedropper Tool
-    - CSS Peeper
     - Dark Reader
     - GoFullPage - Full Page Screen Capture
-    - JSON Formatter
+    - JSON Formatter [Dark: Icecoder, Light: Eclipse]
     - React Developer Tools
+    - Vue.js Developer Tools
     - VisBug
     - Wappalyzer
     - WhatFont
+    - Material Icons for GitHub
+    - FakeFiller
+
+- Zen browser (Firefox based) [Optional]
+
+  - Install Zen browser using tarball script
+
+    ```sh
+    bash <(curl -s https://updates.zen-browser.app/install.sh)
+    ```
+
+  - Create a `zen_local` file inside `/etc/apparmor.d` directory with the following content if a warning pop us when starting up the browser
+
+    ```sh
+    # This profile allows everything and only exists to give the
+    # application a name instead of having the label "unconfined"
+    abi <abi/4.0>,
+    include <tunables/global>
+    profile zen-local
+    /opt/zen/{zen,zen-bin,updater}
+    flags=(unconfined) {
+      userns,
+      # Site-specific additions and overrides. See local/README for details.
+      include if exists <local/zen>
+    }
+    ```
+
+  - Extensions
+
+    - Zen Mods
+
+      - Floating status bar
+      - Smaller compact mode
+      - Private mode highlighting
+
+    - uBlock Origin
+    - Dark Reader
     - Material Icons for GitHub
 
 ## Login to Gnome with Google account
