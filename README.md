@@ -106,7 +106,7 @@ sudo update-alternatives --config x-terminal-emulator
 
 1. Tweak system settings and configure I/O sound using `alsamixer`
 
-2. Install fonts such as JetBrainsMono Nerd Font and Nepali fonts
+2. Install fonts such as JetBrainsMono Nerd Font, Liga SFMono Nerd Font and Nepali fonts
 
 3. Gnome extensions
    - Appindicator and KStausNotifierItem Support - [ 3v1n0 ] (Disable System Appindicator First)
@@ -164,7 +164,7 @@ sudo update-alternatives --config x-terminal-emulator
     bash <(curl -s https://updates.zen-browser.app/install.sh)
     ```
 
-  - Create a `zen_local` file inside `/etc/apparmor.d` directory with the following content if a warning pop us when starting up the browser
+  - Create a `zen-local` file inside `/etc/apparmor.d` directory with the following content if a warning pop us when starting up the browser
 
     ```sh
     # This profile allows everything and only exists to give the
@@ -172,13 +172,15 @@ sudo update-alternatives --config x-terminal-emulator
     abi <abi/4.0>,
     include <tunables/global>
     profile zen-local
-    /opt/zen/{zen,zen-bin,updater}
+    /home/{username}/.tarball-installations/zen/{zen,zen-bin,updater}
     flags=(unconfined) {
       userns,
       # Site-specific additions and overrides. See local/README for details.
       include if exists <local/zen>
     }
     ```
+    
+    **NOTE:** Replace {username} with your username
 
   - Extensions
 
@@ -191,6 +193,7 @@ sudo update-alternatives --config x-terminal-emulator
     - uBlock Origin
     - Dark Reader
     - Material Icons for GitHub
+    - Wappalyzer
 
 ## Login to Gnome with Google account
 
@@ -201,7 +204,7 @@ sudo update-alternatives --config x-terminal-emulator
   ```sh
   # Install Spotify
   curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-  echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+  echo "deb https://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
   sudo nala update
   sudo nala install spotify-client
   ```
