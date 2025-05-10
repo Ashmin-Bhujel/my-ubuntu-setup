@@ -144,17 +144,13 @@ sudo update-alternatives --config x-terminal-emulator
   - Setup Brave browser
   - Import Bookmarks
   - Extensions
-    - Color Picker - Eyedropper Tool
     - Dark Reader
-    - GoFullPage - Full Page Screen Capture
     - JSON Formatter [Dark: Icecoder, Light: Eclipse]
     - React Developer Tools
     - Vue.js Developer Tools
-    - VisBug
     - Wappalyzer
     - WhatFont
     - Material Icons for GitHub
-    - FakeFiller
 
 - Zen browser (Firefox based) [Optional]
 
@@ -180,7 +176,7 @@ sudo update-alternatives --config x-terminal-emulator
     }
     ```
     
-    **NOTE:** Replace {username} with your username
+    **NOTE:** Replace {username} with your username, There will also some configurations needed to be done after initial startup.
 
   - Extensions
 
@@ -311,16 +307,21 @@ sudo update-alternatives --config x-terminal-emulator
 - Docker (Oprional)
 
   ```sh
-  # Add Docker's official GPG key
-  sudo nala update
-  sudo nala install ca-certificates curl
-  sudo install -m 0755 -d /etc/apt/keyrings
-  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-  sudo chmod a+r /etc/apt/keyrings/docker.asc
-
-  # Add the repository to Apt sources
-  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
+  # Add Docker's official GPG key:
+   sudo nala update
+   sudo nala install ca-certificates curl
+   sudo install -m 0755 -d /etc/apt/keyrings
+   sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+   sudo chmod a+r /etc/apt/keyrings/docker.asc
+   
+   # Add the repository to Apt sources:
+   echo \
+     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+     $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  ```
+  
+  ```sh
   # Install packages
   sudo nala update
   sudo nala install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
