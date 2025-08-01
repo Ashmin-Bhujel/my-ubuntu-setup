@@ -12,7 +12,7 @@
 # Update packages
 sudo apt update
 sudo apt upgrade
-sudo apt install nala git -y
+sudo apt install nala git
 sudo nala full-upgrade
 ```
 
@@ -29,7 +29,7 @@ sudo snap refresh snap-store
 
 ```sh
 # Install essential packages
-sudo nala install curl wget git git-flow build-essential net-tools gnome-tweaks gnome-shell-extension-manager btop gdb ubuntu-restricted-extras vlc libgtop2-dev -y
+sudo nala install curl wget git git-flow build-essential net-tools gnome-tweaks gnome-shell-extension-manager btop gdb ubuntu-restricted-extras vlc libgtop2-dev fzf ripgrep tldr bat
 ```
 
 ### Install Fastfetch
@@ -55,12 +55,6 @@ curl -LO "$GHOSTTY_DEB_URL"
 
 > Setup the config for ghostty at ~/.config/ghostty/config
 
-> See the precedence of terminal apps
-
-```sh
-sudo update-alternatives --config x-terminal-emulator
-```
-
 ## Setup Zsh and Oh My Zsh
 
 1. Install Zsh
@@ -68,7 +62,6 @@ sudo update-alternatives --config x-terminal-emulator
    ```sh
    # Install zsh
    sudo nala install zsh
-   chsh -s $(which zsh)
    ```
 
    > Restart terminal
@@ -91,7 +84,7 @@ sudo update-alternatives --config x-terminal-emulator
 
 4. Install Powerlevel10k theme for OhMyZsh
 
-   > Install Nerd Font for symbols either JetBrainsMono Nerd Font or Liga SFMono Nerd Font (Current)
+   > Install Liga SFMono Nerd Font (Current)
 
    ```sh
    # Install powerlevel10k theme
@@ -106,9 +99,7 @@ sudo update-alternatives --config x-terminal-emulator
 
 1. Tweak system settings and configure I/O sound using `alsamixer`
 
-2. Install fonts such as JetBrainsMono Nerd Font, Liga SFMono Nerd Font and Nepali fonts
-
-3. Gnome extensions
+2. Gnome extensions
    - Appindicator and KStausNotifierItem Support - [ 3v1n0 ] (Disable System Appindicator First)
    - Apps Menu - [ fmuellner ]
    - Blur my Shell - [ aunetx ]
@@ -147,7 +138,7 @@ sudo update-alternatives --config x-terminal-emulator
     - Dark Reader
     - JSON Formatter [Dark: Icecoder, Light: Eclipse]
     - React Developer Tools
-    - Vue.js Developer Tools
+    - Redux DevTools
     - Wappalyzer
     - WhatFont
     - Material Icons for GitHub
@@ -175,7 +166,7 @@ sudo update-alternatives --config x-terminal-emulator
       include if exists <local/zen>
     }
     ```
-    
+
     **NOTE:** Replace {username} with your username, There will also some configurations needed to be done after initial startup.
 
   - Extensions
@@ -184,14 +175,13 @@ sudo update-alternatives --config x-terminal-emulator
 
       - Floating status bar
       - Smaller compact mode
-      - Private mode highlighting
 
     - uBlock Origin
     - Dark Reader
     - Material Icons for GitHub
+    - WhatFont
+    - JSON Formatter
     - Wappalyzer
-
-## Login to Gnome with Google account
 
 ## Install other GUI apps
 
@@ -260,7 +250,7 @@ sudo update-alternatives --config x-terminal-emulator
 
   > Setup the config for tmux at ~/.config/tmux/tmux.config
 
-- Neovim
+- Neovim [Optional]
 
   ```sh
   # Install Neovim
@@ -279,7 +269,7 @@ sudo update-alternatives --config x-terminal-emulator
 - NodeJS
 
   ```BASH
-  # Install NodeJS
+  # Install NodeJS [Recommended to visit the official Node.js site]
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
   nvm install --lts
   ```
@@ -313,14 +303,14 @@ sudo update-alternatives --config x-terminal-emulator
    sudo install -m 0755 -d /etc/apt/keyrings
    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
    sudo chmod a+r /etc/apt/keyrings/docker.asc
-   
+
    # Add the repository to Apt sources:
    echo \
      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
      $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   ```
-  
+
   ```sh
   # Install packages
   sudo nala update
